@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="cb043317-fd9f-4eae-978f-b4bbc2f68d37" name="retail api" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cb043317-fd9f-4eae-978f-b4bbc2f68d37fileName">retail-api</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="retail api.json">
+    <con:part>
+      <con:url>retail api.json</con:url>
+      <con:content>{"openapi":"3.0.1","info":{"title":"retail api","version":"1.0.0"},"servers":[{"url":"/"}],"paths":{"/auth/login":{"post":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}},"/address":{"get":{"responses":{"default":{"description":"Default response"}}},"put":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}},"post":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}},"delete":{"requestBody":{"content":{"application/json":{}}},"responses":{"default":{"description":"Default response"}}}}}}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

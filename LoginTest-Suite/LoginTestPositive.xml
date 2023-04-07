@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="453033cd-8234-4d24-946e-1e8ceb69fa45" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="LoginTestPositive" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="IncludeOverview">true</con:setting>
+    <con:setting id="IncludeResults">true</con:setting>
+    <con:setting id="FlowLayout">false</con:setting>
+    <con:setting id="ErrorDetails">true</con:setting>
+    <con:setting id="IncludeCoverage">true</con:setting>
+    <con:setting id="453033cd-8234-4d24-946e-1e8ceb69fa45fileName">LoginTestPositive</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="REST Request" id="ccd7d726-b575-4ac8-a83b-9ae1ef09b8d6">
+    <con:settings/>
+    <con:config service="retail api" resourcePath="/auth/login" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="REST Request" id="b479e3f7-766c-4e6e-b828-6ba430e361d7" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request>{\r
+   "email" : "readyapi@tekschool.us",\r
+   "password" : "Test@12345"\r
+}</con:request>
+        <con:originalUri>https://tek-retail-api.azurewebsites.net/auth/login</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="de793e42-f251-4080-9937-ea7438c16ca0" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" id="b97dceda-3176-4a69-8676-d57afd3f5c9c" name="Response SLA">
+          <con:configuration>
+            <SLA>5000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="e5e5af25-a0f1-4a87-857a-a73ddae97647" name="Match content of [name]">
+          <con:configuration>
+            <path>$['name']</path>
+            <content>"readyapi"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="9054ad68-3b85-415c-bb85-631fa113f33a" name="Match content of [email]">
+          <con:configuration>
+            <path>$['email']</path>
+            <content>"readyapi@tekschool.us"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="62956f26-d2c7-4200-965e-a88f37969692" name="Match content of [userId]">
+          <con:configuration>
+            <path>$['userId']</path>
+            <content>4441</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="521d5e2b-f2ec-4fa4-ac7f-a438bfe3d9a1" name="Match content of [role]">
+          <con:configuration>
+            <path>$['role']</path>
+            <content>"customer"</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Match" id="61a63f33-aee1-48f6-bcfd-1522ce83f7f9" name="Match content of [roleId]">
+          <con:configuration>
+            <path>$['roleId']</path>
+            <content>4300</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Existence Match" id="fa35ae48-cdcd-4d9b-bd0c-34d6bc7c15bd" name="Check for existence of [accessToken]">
+          <con:configuration>
+            <path>$['accessToken']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
